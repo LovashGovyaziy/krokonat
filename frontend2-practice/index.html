@@ -1,0 +1,80 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Выбор даты и времени</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">LOGO</div>
+        <nav class="nav">
+            <a href="#">Услуги</a>
+            <a href="#">Галерея</a>
+            <a href="#">Команда</a>
+            <a href="#">Отзывы</a>
+            <a href="#">Контакты</a>
+        </nav>
+    </header>
+    <div class="step-indicator">
+        <div class="step-wrapper"><div class="step-circle">1</div><div class="step-line"></div></div>
+        <div class="step-wrapper"><div class="step-circle">2</div><div class="step-line"></div></div>
+        <div class="step-wrapper"><div class="step-circle active">3</div><div class="step-line dark"></div></div>
+        <div class="step-wrapper"><div class="step-circle">4</div><div class="step-line"></div></div>
+        <div class="step-wrapper"><div class="step-circle">5</div><div class="step-line"></div></div>
+    </div>
+    <main class="main-content">
+        <h1 class="page-title">Этап 3. Время визита</h1>
+        <div class="booking-container">      
+            <div class="calendar-section">
+                <div class="calendar-header">
+                    <h2 id="month-title"></h2>
+                    <div class="calendar-controls">
+                        <button class="btn-arrow" id="prev-month">&lt;</button>
+                        <button class="btn-arrow" id="next-month">&gt;</button>
+                    </div>
+                </div>
+                <div class="calendar-grid" id="calendar-grid">
+                    <div class="weekday">Пн</div><div class="weekday">Вт</div><div class="weekday">Ср</div><div class="weekday">Чт</div><div class="weekday">Пт</div><div class="weekday">Сб</div><div class="weekday">Вс</div>
+                </div>
+            </div>
+
+            <div class="time-section">
+                <h2>Доступное время</h2>
+                <div class="time-grid" id="time-grid"></div>
+            </div>
+        </div>
+
+        <div class="action-block">
+            <button class="btn-submit">Продолжить</button>
+            <p class="hint-text">Нажмите на свободное время, чтобы продолжить. Занятые слоты выделены серым.</p>
+        </div>
+        <div id="result-panel" style="margin-top: 30px; padding: 20px; background: #2b2b2b; color: white; border-radius: 10px; font-size: 18px;">
+            Выберите дату и время
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-col">
+            <div class="footer-logo">LOGO</div>
+            <p>Барбершоп для тех, кто ценит качество, стиль и атмосферу. Мы не просто стрижем — мы создаем уверенность в себе.</p>
+        </div>
+        <div class="footer-col">
+            <h3>КОНТАКТЫ</h3>
+            <p>📍 ул. Садовая, 15, Москва</p>
+            <p>📞 +7 (495) 123-45-67</p>
+        </div>
+        <div class="footer-col">
+            <h3>РЕЖИМ РАБОТЫ</h3>
+            <p>Пн-Пт: 9:00 – 21:00</p>
+            <p>Сб-Вс: 10:00 – 19:00</p>
+        </div>
+    </footer>
+
+    <div class="footer-bottom">
+        <span>© 2026. Все права защищены.</span>
+        <a href="#">Политика конфиденциальности</a>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
