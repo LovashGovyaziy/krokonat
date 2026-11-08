@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #8d8184;
+    color: #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header { background-color: #f27a76; display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; }
+.logo { font-size: 24px; font-weight: bold; color: #8d8184; letter-spacing: 2px; }
+.nav { display: flex; gap: 20px; }
+.nav a { text-decoration: none; color: #8d8184; font-size: 14px; transition: color 0.2s ease; }
+.nav a:hover { color: #1a1a1a; }
+
+.step-indicator { background-color: #ff7f7f; display: flex; justify-content: center; align-items: center; padding: 15px 40px; gap: 10px; }
+.step-wrapper { display: flex; align-items: center; flex: 1; }
+.step-wrapper:last-child { flex: 0; }
+.step-circle { width: 30px; height: 30px; border-radius: 50%; background-color: #c4a9aa; color: white; display: flex; justify-content: center; align-items: center; font-weight: bold; font-size: 14px; flex-shrink: 0; }
+.step-circle.active { background-color: #1a1a1a; }
+.step-line { flex: 1; height: 4px; background-color: #c4a9aa; margin: 0 10px; }
+.step-line.dark { background-color: #1a1a1a; }
+
+.main-content { flex: 1; padding: 40px; max-width: 1200px; margin: 0 auto; width: 100%; }
+.page-title { font-size: 28px; margin-bottom: 30px; }
+.booking-container { display: flex; gap: 30px; margin-bottom: 40px; }
+
+.calendar-section, .time-section { background-color: #ff716b; border-radius: 20px; padding: 30px; }
+.calendar-section { flex: 1.2; }
+.time-section { flex: 1; }
+.calendar-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.calendar-header h2, .time-section h2 { font-size: 20px; font-weight: bold; }
+.calendar-controls { display: flex; gap: 5px; }
+.btn-arrow { background: white; border: 1px solid transparent; border-radius: 5px; width: 30px; height: 30px; cursor: pointer; font-weight: bold; transition: all 0.2s; }
+.btn-arrow:hover { background: #f0f0f0; }
+.btn-arrow:focus-visible { outline: 2px solid #1a1a1a; outline-offset: 2px; }
+
+.calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px; text-align: center; }
+.weekday { font-size: 12px; font-weight: bold; margin-bottom: 10px; }
+
+.day { background-color: white; border: 1px solid transparent; border-radius: 50%; width: 100%; aspect-ratio: 1 / 1; display: flex; justify-content: center; align-items: center; font-size: 14px; cursor: pointer; transition: all 0.2s; font-family: inherit; color: #1a1a1a; }
+.day:hover:not(:disabled) { background-color: #f0f0f0; transform: scale(1.05); }
+.day:focus-visible { outline: 2px solid #1a1a1a; outline-offset: 2px; }
+.day.selected { background-color: #1a1a1a; color: white; font-weight: bold; }
+.day:disabled { background-color: transparent; color: #ff716b; cursor: not-allowed; opacity: 0.6; }
+.day.empty { visibility: hidden; }
+
+.time-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px; }
+.time-btn { background-color: white; border: 1px solid transparent; border-radius: 10px; padding: 12px; font-size: 16px; font-weight: bold; cursor: pointer; text-align: center; transition: all 0.2s; font-family: inherit; color: #1a1a1a; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.time-btn:hover:not(:disabled) { background-color: #f0f0f0; }
+.time-btn:focus-visible { outline: 2px solid #1a1a1a; outline-offset: 2px; }
+.time-btn.active { background-color: #1a1a1a; color: white; }
+.time-btn:disabled { background-color: #e8c1c1; color: #888; cursor: not-allowed; font-weight: normal; }
+.time-btn:disabled span { font-size: 10px; margin-top: 4px; }
+
+.action-block { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; gap: 20px; }
+.btn-submit { background-color: #1a1a1a; color: white; border: none; padding: 15px 40px; border-radius: 10px; font-size: 16px; font-weight: bold; cursor: pointer; transition: background-color 0.2s; }
+.btn-submit:hover { background-color: #333; }
+.btn-submit:focus-visible { outline: 2px solid white; outline-offset: 2px; }
+.hint-text { color: #e8c1c1; font-size: 14px; max-width: 400px; text-align: right; }
+
+.result-panel { margin-top: 30px; padding: 20px; background: #2b2b2b; color: white; border-radius: 10px; font-size: 18px; }
+
+.footer { background-color: #2b2b2b; color: #a0a0a0; display: flex; justify-content: space-between; padding: 40px; gap: 40px; }
+.footer-col { flex: 1; }
+.footer-logo { font-size: 24px; font-weight: bold; color: #8d8184; margin-bottom: 15px; }
+.footer-col h3 { color: white; font-size: 14px; margin-bottom: 15px; letter-spacing: 1px; }
+.footer-col p { font-size: 12px; line-height: 1.6; }
+.footer-bottom { background-color: #2b2b2b; display: flex; justify-content: space-between; padding: 20px 40px; border-top: 1px solid #444; font-size: 12px; color: #666; }
+.footer-bottom a { color: #666; text-decoration: none; }
+.footer-bottom a:hover { color: #fff; }
+
+@media (max-width: 900px) {
+    .booking-container { flex-direction: column; }
+    .action-block { flex-direction: column; align-items: flex-start; }
+    .hint-text { text-align: left; }
+    .footer { flex-wrap: wrap; }
+    .footer-col { min-width: 45%; }
+}
+
+@media (max-width: 600px) {
+    .header { flex-direction: column; gap: 15px; padding: 15px; }
+    .nav { flex-wrap: wrap; justify-content: center; }
+    .main-content { padding: 20px 15px; }
+    .page-title { font-size: 22px; }
+    .step-indicator { padding: 10px 15px; }
+    .step-line { display: none; }
+    .step-wrapper { flex: 0 0 auto; }
+    .calendar-section, .time-section { padding: 15px; }
+    .time-grid { grid-template-columns: 1fr; }
+    .calendar-grid { gap: 5px; }
+    .day { font-size: 12px; }
+    .action-block .btn-submit { width: 100%; }
+    .footer { flex-direction: column; padding: 20px; }
+    .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+}
+.loader {
+    padding: 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #ff716b;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.error-msg {
+    padding: 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #cc0000;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 20px;
+}
